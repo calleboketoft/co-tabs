@@ -28,6 +28,7 @@
     "zone.js": "0.6.11"
   },
   "devDependencies": {
+    "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4-dev",
     "express": "4.13.4",
     "ghooks": "1.2.1",
     "typescript": "1.8.10"
