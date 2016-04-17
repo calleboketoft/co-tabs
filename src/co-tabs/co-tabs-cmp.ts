@@ -26,5 +26,6 @@ export class CoTabsCmp {
   selectTab (tab) {
     this.coTabCmps.toArray().forEach(tab => tab.active = false)
     tab.active = true
+    return false
   }
 }

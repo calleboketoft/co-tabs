@@ -22,6 +22,7 @@ var CoTabsCmp = (function () {
     CoTabsCmp.prototype.selectTab = function (tab) {
         this.coTabCmps.toArray().forEach(function (tab) { return tab.active = false; });
         tab.active = true;
+        return false;
     };
     __decorate([
         core_1.ContentChildren(co_tab_cmp_1.CoTabCmp), 
