@@ -31,7 +31,7 @@ var CoTabsCmp = (function () {
     CoTabsCmp = __decorate([
         core_1.Component({
             selector: 'co-tabs',
-            template: "\n    <ul class='nav nav-tabs'>\n      <li class='nav-item' *ngFor='#tab of coTabCmps'\n        (click)='selectTab(tab)'>\n        <a href='#' class='nav-link'\n          [class.active]='tab.active'>\n          {{tab.title}}\n        </a>\n      </li>\n    </ul>\n    <ng-content></ng-content>\n  "
+            template: "\n    <ul class='nav nav-tabs'>\n      <li class='nav-item' *ngFor='#tab of coTabCmps'\n        (click)='selectTab(tab)'>\n        <a href='#' class='nav-link'\n          [class.active]='tab.active'>\n          {{tab.title}}\n        </a>\n      </li>\n    </ul>\n    <br>\n    <ng-content></ng-content>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], CoTabsCmp);
