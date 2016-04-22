@@ -12,7 +12,6 @@ import {CoTabCmp} from './co-tab-cmp'
         </a>
       </li>
     </ul>
-    <br>
     <ng-content></ng-content>
   `
 })
