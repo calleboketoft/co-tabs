@@ -4,7 +4,7 @@ import {CoTabCmp} from './co-tab-cmp'
   selector: 'co-tabs',
   template: `
     <ul class='nav nav-tabs'>
-      <li class='nav-item' *ngFor='#tab of coTabCmps'
+      <li class='nav-item' *ngFor='let tab of coTabCmps'
         (click)='selectTab(tab)'>
         <a href='#' class='nav-link'
           [class.active]='tab.active'>
