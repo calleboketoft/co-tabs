@@ -1,4 +1,4 @@
-import {Component, ContentChildren} from 'angular2/core'
+import {Component, ContentChildren} from '@angular/core'
 import {CoTabCmp} from './co-tab-cmp'
 @Component({
   selector: 'co-tabs',

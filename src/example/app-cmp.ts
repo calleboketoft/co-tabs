@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core'
+import {Component} from '@angular/core'
 import {CoTabsCmp} from '../co-tabs/co-tabs-cmp'
 import {CoTabCmp} from '../co-tabs/co-tab-cmp'
 @Component({
