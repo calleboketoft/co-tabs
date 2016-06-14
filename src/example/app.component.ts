@@ -1,8 +1,8 @@
 import {Component} from '@angular/core'
-import {CoTabsCmp} from '../co-tabs/co-tabs-cmp'
-import {CoTabCmp} from '../co-tabs/co-tab-cmp'
+import {CoTabsComponent} from '../co-tabs/co-tabs.component'
+import {CoTabComponent} from '../co-tabs/co-tab.component'
 @Component({
-  directives: [CoTabsCmp, CoTabCmp],
+  directives: [CoTabsComponent, CoTabComponent],
   selector: 'app',
   template: `
     <co-tabs>
@@ -11,4 +11,4 @@ import {CoTabCmp} from '../co-tabs/co-tab-cmp'
     </co-tabs>
   `
 })
-export class AppCmp {}
+export class AppComponent {}

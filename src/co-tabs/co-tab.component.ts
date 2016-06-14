@@ -7,7 +7,7 @@ import {Component, Input} from '@angular/core'
     </div>
   `
 })
-export class CoTabCmp {
+export class CoTabComponent {
   @Input('tabTitle') title;
   @Input() active = false;
 }

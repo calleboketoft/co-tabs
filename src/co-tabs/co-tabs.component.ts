@@ -1,5 +1,5 @@
 import {Component, ContentChildren} from '@angular/core'
-import {CoTabCmp} from './co-tab-cmp'
+import {CoTabComponent} from './co-tab.component'
 @Component({
   selector: 'co-tabs',
   template: `
@@ -15,8 +15,8 @@ import {CoTabCmp} from './co-tab-cmp'
     <ng-content></ng-content>
   `
 })
-export class CoTabsCmp {
-  @ContentChildren(CoTabCmp) coTabCmps
+export class CoTabsComponent {
+  @ContentChildren(CoTabComponent) coTabCmps
 
   ngAfterContentInit () {
     let activeTabs = this.coTabCmps.filter(tab => tab.active)

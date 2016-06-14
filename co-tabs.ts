@@ -1,2 +1,2 @@
-export {CoTabsCmp} from './src/co-tabs/co-tabs-cmp'
-export {CoTabCmp} from './src/co-tabs/co-tab-cmp'
+export {CoTabsComponent} from './src/co-tabs/co-tabs.component'
+export {CoTabComponent} from './src/co-tabs/co-tab.component'

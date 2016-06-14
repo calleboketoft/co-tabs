@@ -9,33 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var co_tab_cmp_1 = require('./co-tab-cmp');
-var CoTabsCmp = (function () {
-    function CoTabsCmp() {
+var co_tab_component_1 = require('./co-tab.component');
+var CoTabsComponent = (function () {
+    function CoTabsComponent() {
     }
-    CoTabsCmp.prototype.ngAfterContentInit = function () {
+    CoTabsComponent.prototype.ngAfterContentInit = function () {
         var activeTabs = this.coTabCmps.filter(function (tab) { return tab.active; });
         if (activeTabs.length === 0) {
             this.selectTab(this.coTabCmps.first);
         }
     };
-    CoTabsCmp.prototype.selectTab = function (tab) {
+    CoTabsComponent.prototype.selectTab = function (tab) {
         this.coTabCmps.toArray().forEach(function (tab) { return tab.active = false; });
         tab.active = true;
         return false;
     };
     __decorate([
-        core_1.ContentChildren(co_tab_cmp_1.CoTabCmp), 
+        core_1.ContentChildren(co_tab_component_1.CoTabComponent), 
         __metadata('design:type', Object)
-    ], CoTabsCmp.prototype, "coTabCmps", void 0);
-    CoTabsCmp = __decorate([
+    ], CoTabsComponent.prototype, "coTabCmps", void 0);
+    CoTabsComponent = __decorate([
         core_1.Component({
             selector: 'co-tabs',
             template: "\n    <ul class='nav nav-tabs'>\n      <li class='nav-item' *ngFor='let tab of coTabCmps'\n        (click)='selectTab(tab)'>\n        <a href='#' class='nav-link'\n          [class.active]='tab.active'>\n          {{tab.title}}\n        </a>\n      </li>\n    </ul>\n    <ng-content></ng-content>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], CoTabsCmp);
-    return CoTabsCmp;
+    ], CoTabsComponent);
+    return CoTabsComponent;
 }());
-exports.CoTabsCmp = CoTabsCmp;
-//# sourceMappingURL=co-tabs-cmp.js.map
+exports.CoTabsComponent = CoTabsComponent;
+//# sourceMappingURL=co-tabs.component.js.map

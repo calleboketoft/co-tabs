@@ -9,26 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var CoTabCmp = (function () {
-    function CoTabCmp() {
+var CoTabComponent = (function () {
+    function CoTabComponent() {
         this.active = false;
     }
     __decorate([
         core_1.Input('tabTitle'), 
         __metadata('design:type', Object)
-    ], CoTabCmp.prototype, "title", void 0);
+    ], CoTabComponent.prototype, "title", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], CoTabCmp.prototype, "active", void 0);
-    CoTabCmp = __decorate([
+    ], CoTabComponent.prototype, "active", void 0);
+    CoTabComponent = __decorate([
         core_1.Component({
             selector: 'co-tab',
             template: "\n    <div [hidden]='!active' class='pane'>\n      <ng-content></ng-content>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], CoTabCmp);
-    return CoTabCmp;
+    ], CoTabComponent);
+    return CoTabComponent;
 }());
-exports.CoTabCmp = CoTabCmp;
-//# sourceMappingURL=co-tab-cmp.js.map
+exports.CoTabComponent = CoTabComponent;
+//# sourceMappingURL=co-tab.component.js.map
