@@ -24,7 +24,7 @@ var CoTabComponent = (function () {
     CoTabComponent = __decorate([
         core_1.Component({
             selector: 'co-tab',
-            template: "\n    <div [hidden]='!active' class='pane'>\n      <ng-content></ng-content>\n    </div>\n  "
+            template: "\n    <div [hidden]=\"!active\" class=\"pane\">\n      <ng-content></ng-content>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], CoTabComponent);

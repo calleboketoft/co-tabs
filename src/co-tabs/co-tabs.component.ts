@@ -3,11 +3,11 @@ import {CoTabComponent} from './co-tab.component'
 @Component({
   selector: 'co-tabs',
   template: `
-    <ul class='nav nav-tabs'>
-      <li class='nav-item' *ngFor='let tab of coTabCmps'
-        (click)='selectTab(tab)'>
-        <a href='#' class='nav-link'
-          [class.active]='tab.active'>
+    <ul class="nav nav-tabs">
+      <li class="nav-item" *ngFor="let tab of coTabCmps"
+        (click)="selectTab(tab)">
+        <a href="#" class="nav-link"
+          [class.active]="tab.active">
           {{tab.title}}
         </a>
       </li>
