@@ -1,13 +1,13 @@
-import {Component, Input} from '@angular/core'
+import { Component, Input } from '@angular/core'
 @Component({
-  selector: 'co-tab',
+  selector: 'ng2-tab',
   template: `
     <div [hidden]="!active" class="pane">
       <ng-content></ng-content>
     </div>
   `
 })
-export class CoTabComponent {
+export class Ng2TabComponent {
   @Input('tabTitle') title;
   @Input() active = false;
 }

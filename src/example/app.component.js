@@ -9,16 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var co_tabs_component_1 = require('../co-tabs/co-tabs.component');
-var co_tab_component_1 = require('../co-tabs/co-tab.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
-            directives: [co_tabs_component_1.CoTabsComponent, co_tab_component_1.CoTabComponent],
             selector: 'app',
-            template: "\n    <co-tabs>\n      <co-tab [tabTitle]='\"tab1\"'>Anything</co-tab>\n      <co-tab [tabTitle]='\"tab2\"'>Else</co-tab>\n    </co-tabs>\n  "
+            template: "\n    <ng2-tabs>\n      <ng2-tab [tabTitle]='\"tab1\"'>Anything</ng2-tab>\n      <ng2-tab [tabTitle]='\"tab2\"'>Else</ng2-tab>\n    </ng2-tabs>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

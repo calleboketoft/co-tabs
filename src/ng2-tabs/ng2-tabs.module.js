@@ -10,20 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var _1 = require('../../');
-var AppModule = (function () {
-    function AppModule() {
+var ng2_tabs_component_1 = require('./ng2-tabs.component');
+var ng2_tab_component_1 = require('./ng2-tab.component');
+var Ng2TabsModule = (function () {
+    function Ng2TabsModule() {
     }
-    AppModule = __decorate([
+    Ng2TabsModule = __decorate([
         core_1.NgModule({
-            declarations: [app_component_1.AppComponent],
-            imports: [platform_browser_1.BrowserModule, _1.Ng2TabsModule],
-            bootstrap: [app_component_1.AppComponent],
+            imports: [platform_browser_1.BrowserModule],
+            declarations: [ng2_tabs_component_1.Ng2TabsComponent, ng2_tab_component_1.Ng2TabComponent],
+            exports: [ng2_tabs_component_1.Ng2TabsComponent, ng2_tab_component_1.Ng2TabComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], Ng2TabsModule);
+    return Ng2TabsModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.Ng2TabsModule = Ng2TabsModule;
+//# sourceMappingURL=ng2-tabs.module.js.map

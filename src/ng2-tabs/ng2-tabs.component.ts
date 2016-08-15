@@ -1,7 +1,7 @@
-import {Component, ContentChildren} from '@angular/core'
-import {CoTabComponent} from './co-tab.component'
+import { Component, ContentChildren } from '@angular/core'
+import { Ng2TabComponent } from './ng2-tab.component'
 @Component({
-  selector: 'co-tabs',
+  selector: 'ng2-tabs',
   template: `
     <ul class="nav nav-tabs">
       <li class="nav-item" *ngFor="let tab of coTabCmps"
@@ -15,8 +15,8 @@ import {CoTabComponent} from './co-tab.component'
     <ng-content></ng-content>
   `
 })
-export class CoTabsComponent {
-  @ContentChildren(CoTabComponent) coTabCmps
+export class Ng2TabsComponent {
+  @ContentChildren(Ng2TabComponent) coTabCmps
 
   ngAfterContentInit () {
     let activeTabs = this.coTabCmps.filter(tab => tab.active)
