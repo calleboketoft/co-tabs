@@ -1,6 +1,6 @@
 {
-  "name": "co-tabs",
-  "version": "1.1.0",
+  "name": "@calle/ng2-tabs",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
