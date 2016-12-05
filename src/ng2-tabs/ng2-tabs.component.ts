@@ -1,4 +1,4 @@
-import { Component, ContentChildren } from '@angular/core'
+import { Component, ContentChildren, AfterContentInit } from '@angular/core'
 import { Ng2TabComponent } from './ng2-tab.component'
 @Component({
   selector: 'ng2-tabs',
@@ -15,19 +15,29 @@ import { Ng2TabComponent } from './ng2-tab.component'
     <ng-content></ng-content>
   `
 })
-export class Ng2TabsComponent {
+export class Ng2TabsComponent implements AfterContentInit {
   @ContentChildren(Ng2TabComponent) coTabCmps
 
-  ngAfterContentInit () {
+  public ngAfterContentInit () {
     let activeTabs = this.coTabCmps.filter(tab => tab.active)
     if (activeTabs.length === 0) {
       this.selectTab(this.coTabCmps.first)
     }
   }
 
-  selectTab (tab) {
+  public selectTab (tab) {
     this.coTabCmps.toArray().forEach(tab => tab.active = false)
     tab.active = true
     return false
+  }
+
+  public selectTabByActivatorId (activatorId) {
+    this.coTabCmps.toArray().forEach(tab => {
+      if (tab.activatorId !== activatorId) {
+        tab.active = false
+      } else {
+        tab.active = true
+      }
+    })
   }
 }

@@ -9,13 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var index_1 = require('../../index');
 var AppComponent = (function () {
     function AppComponent() {
     }
+    AppComponent.prototype.selectTab2 = function () {
+        this.ng2TabsComponent.selectTabByActivatorId('nr2');
+    };
+    __decorate([
+        core_1.ViewChild(index_1.Ng2TabsComponent), 
+        __metadata('design:type', index_1.Ng2TabsComponent)
+    ], AppComponent.prototype, "ng2TabsComponent", void 0);
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
-            template: "\n    <ng2-tabs>\n      <ng2-tab [tabTitle]='\"tab1\"'>Anything</ng2-tab>\n      <ng2-tab [tabTitle]='\"tab2\"'>Else</ng2-tab>\n    </ng2-tabs>\n  "
+            template: "\n    <ng2-tabs>\n      <ng2-tab [tabTitle]='\"tab1\"'>Some content in tab 1</ng2-tab>\n      <ng2-tab [tabTitle]='\"tab2\"' [activatorId]=\"'nr2'\">Content in tab 2</ng2-tab>\n    </ng2-tabs>\n\n    <br>\n    <button class=\"btn btn-primary\" (click)=\"selectTab2()\">\n      Select tab2\n    </button>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

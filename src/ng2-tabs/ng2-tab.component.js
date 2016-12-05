@@ -18,6 +18,10 @@ var Ng2TabComponent = (function () {
         __metadata('design:type', Object)
     ], Ng2TabComponent.prototype, "title", void 0);
     __decorate([
+        core_1.Input('activatorId'), 
+        __metadata('design:type', Object)
+    ], Ng2TabComponent.prototype, "activatorId", void 0);
+    __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
     ], Ng2TabComponent.prototype, "active", void 0);

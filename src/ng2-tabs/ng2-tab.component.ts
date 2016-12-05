@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core'
   `
 })
 export class Ng2TabComponent {
-  @Input('tabTitle') title;
-  @Input() active = false;
+  @Input('tabTitle') title
+  @Input('activatorId') activatorId
+  @Input() active = false
 }

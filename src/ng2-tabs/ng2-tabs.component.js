@@ -24,6 +24,16 @@ var Ng2TabsComponent = (function () {
         tab.active = true;
         return false;
     };
+    Ng2TabsComponent.prototype.selectTabByActivatorId = function (activatorId) {
+        this.coTabCmps.toArray().forEach(function (tab) {
+            if (tab.activatorId !== activatorId) {
+                tab.active = false;
+            }
+            else {
+                tab.active = true;
+            }
+        });
+    };
     __decorate([
         core_1.ContentChildren(ng2_tab_component_1.Ng2TabComponent), 
         __metadata('design:type', Object)
