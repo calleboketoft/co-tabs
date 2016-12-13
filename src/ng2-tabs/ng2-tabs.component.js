@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var ng2_tab_component_1 = require('./ng2-tab.component');
+var core_1 = require("@angular/core");
+var ng2_tab_component_1 = require("./ng2-tab.component");
 var Ng2TabsComponent = (function () {
     function Ng2TabsComponent() {
     }
@@ -34,18 +34,18 @@ var Ng2TabsComponent = (function () {
             }
         });
     };
-    __decorate([
-        core_1.ContentChildren(ng2_tab_component_1.Ng2TabComponent), 
-        __metadata('design:type', Object)
-    ], Ng2TabsComponent.prototype, "coTabCmps", void 0);
-    Ng2TabsComponent = __decorate([
-        core_1.Component({
-            selector: 'ng2-tabs',
-            template: "\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of coTabCmps\"\n        (click)=\"selectTab(tab)\">\n        <a href=\"#\" class=\"nav-link\"\n          [class.active]=\"tab.active\">\n          {{tab.title}}\n        </a>\n      </li>\n    </ul>\n    <ng-content></ng-content>\n  "
-        }), 
-        __metadata('design:paramtypes', [])
-    ], Ng2TabsComponent);
     return Ng2TabsComponent;
 }());
+__decorate([
+    core_1.ContentChildren(ng2_tab_component_1.Ng2TabComponent),
+    __metadata("design:type", Object)
+], Ng2TabsComponent.prototype, "coTabCmps", void 0);
+Ng2TabsComponent = __decorate([
+    core_1.Component({
+        selector: 'ng2-tabs',
+        template: "\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of coTabCmps\"\n        (click)=\"selectTab(tab)\">\n        <a href=\"#\" class=\"nav-link\"\n          [class.active]=\"tab.active\">\n          {{tab.title}}\n        </a>\n      </li>\n    </ul>\n    <ng-content></ng-content>\n  "
+    }),
+    __metadata("design:paramtypes", [])
+], Ng2TabsComponent);
 exports.Ng2TabsComponent = Ng2TabsComponent;
 //# sourceMappingURL=ng2-tabs.component.js.map

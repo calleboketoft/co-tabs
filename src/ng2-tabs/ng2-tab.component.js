@@ -8,31 +8,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var Ng2TabComponent = (function () {
     function Ng2TabComponent() {
         this.active = false;
     }
-    __decorate([
-        core_1.Input('tabTitle'), 
-        __metadata('design:type', Object)
-    ], Ng2TabComponent.prototype, "title", void 0);
-    __decorate([
-        core_1.Input('activatorId'), 
-        __metadata('design:type', Object)
-    ], Ng2TabComponent.prototype, "activatorId", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], Ng2TabComponent.prototype, "active", void 0);
-    Ng2TabComponent = __decorate([
-        core_1.Component({
-            selector: 'ng2-tab',
-            template: "\n    <div [hidden]=\"!active\" class=\"pane\">\n      <ng-content></ng-content>\n    </div>\n  "
-        }), 
-        __metadata('design:paramtypes', [])
-    ], Ng2TabComponent);
     return Ng2TabComponent;
 }());
+__decorate([
+    core_1.Input('tabTitle'),
+    __metadata("design:type", Object)
+], Ng2TabComponent.prototype, "title", void 0);
+__decorate([
+    core_1.Input('activatorId'),
+    __metadata("design:type", Object)
+], Ng2TabComponent.prototype, "activatorId", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], Ng2TabComponent.prototype, "active", void 0);
+Ng2TabComponent = __decorate([
+    core_1.Component({
+        selector: 'ng2-tab',
+        template: "\n    <div [hidden]=\"!active\" class=\"pane\">\n      <ng-content></ng-content>\n    </div>\n  "
+    }),
+    __metadata("design:paramtypes", [])
+], Ng2TabComponent);
 exports.Ng2TabComponent = Ng2TabComponent;
 //# sourceMappingURL=ng2-tab.component.js.map
