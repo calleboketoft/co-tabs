@@ -1,4 +1,5 @@
-import { Component, ContentChildren, AfterContentInit } from '@angular/core'
+import { Component, ContentChildren, AfterContentInit,
+  Output, EventEmitter } from '@angular/core'
 import { Ng2TabComponent } from './ng2-tab.component'
 @Component({
   selector: 'ng2-tabs',
@@ -16,28 +17,32 @@ import { Ng2TabComponent } from './ng2-tab.component'
   `
 })
 export class Ng2TabsComponent implements AfterContentInit {
+  @Output() selectedTab = new EventEmitter()
   @ContentChildren(Ng2TabComponent) coTabCmps
 
   public ngAfterContentInit () {
     let activeTabs = this.coTabCmps.filter(tab => tab.active)
     if (activeTabs.length === 0) {
-      this.selectTab(this.coTabCmps.first)
+      this.selectTab(this.coTabCmps.first, true)
     }
   }
 
-  public selectTab (tab) {
+  public selectTab (tab, initial?) {
     this.coTabCmps.toArray().forEach(tab => tab.active = false)
     tab.active = true
+    this.selectedTab.emit({
+      initial: !!initial,
+      tab
+    })
     return false
   }
 
   public selectTabByActivatorId (activatorId) {
-    this.coTabCmps.toArray().forEach(tab => {
-      if (tab.activatorId !== activatorId) {
-        tab.active = false
-      } else {
-        tab.active = true
-      }
-    })
+    let foundTab = this.coTabCmps.toArray().find(tab => tab.activatorId === activatorId)
+    if (!foundTab) {
+      console.error(`No tab with activatorId: "${activatorId}" found`)
+    } else {
+      this.selectTab(foundTab)
+    }
   }
 }

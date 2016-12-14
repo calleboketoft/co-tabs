@@ -12,30 +12,38 @@ var core_1 = require("@angular/core");
 var ng2_tab_component_1 = require("./ng2-tab.component");
 var Ng2TabsComponent = (function () {
     function Ng2TabsComponent() {
+        this.selectedTab = new core_1.EventEmitter();
     }
     Ng2TabsComponent.prototype.ngAfterContentInit = function () {
         var activeTabs = this.coTabCmps.filter(function (tab) { return tab.active; });
         if (activeTabs.length === 0) {
-            this.selectTab(this.coTabCmps.first);
+            this.selectTab(this.coTabCmps.first, true);
         }
     };
-    Ng2TabsComponent.prototype.selectTab = function (tab) {
+    Ng2TabsComponent.prototype.selectTab = function (tab, initial) {
         this.coTabCmps.toArray().forEach(function (tab) { return tab.active = false; });
         tab.active = true;
+        this.selectedTab.emit({
+            initial: !!initial,
+            tab: tab
+        });
         return false;
     };
     Ng2TabsComponent.prototype.selectTabByActivatorId = function (activatorId) {
-        this.coTabCmps.toArray().forEach(function (tab) {
-            if (tab.activatorId !== activatorId) {
-                tab.active = false;
-            }
-            else {
-                tab.active = true;
-            }
-        });
+        var foundTab = this.coTabCmps.toArray().find(function (tab) { return tab.activatorId === activatorId; });
+        if (!foundTab) {
+            console.error("No tab with activatorId: \"" + activatorId + "\" found");
+        }
+        else {
+            this.selectTab(foundTab);
+        }
     };
     return Ng2TabsComponent;
 }());
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], Ng2TabsComponent.prototype, "selectedTab", void 0);
 __decorate([
     core_1.ContentChildren(ng2_tab_component_1.Ng2TabComponent),
     __metadata("design:type", Object)
