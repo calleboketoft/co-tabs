@@ -29,8 +29,7 @@ AppComponent = __decorate([
     core_1.Component({
         selector: 'app',
         template: "\n    <ng2-tabs (selectedTab)=\"selectedTab($event)\">\n      <ng2-tab [tabTitle]='\"tab1\"'>Some content in tab 1</ng2-tab>\n      <ng2-tab [tabTitle]='\"tab2\"' [activatorId]=\"'nr2'\">Content in tab 2</ng2-tab>\n    </ng2-tabs>\n\n    <br>\n    <button class=\"btn btn-primary\" (click)=\"selectTab('nr2')\">\n      Select tab2\n    </button>\n    <button class=\"btn btn-danger\" (click)=\"selectTab('bob')\">\n      Select bob (doesn't exist)\n    </button>\n  "
-    }),
-    __metadata("design:paramtypes", [])
+    })
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

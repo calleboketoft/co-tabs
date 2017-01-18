@@ -6,6 +6,6 @@ import { Ng2TabsModule } from '../../'
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, Ng2TabsModule],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

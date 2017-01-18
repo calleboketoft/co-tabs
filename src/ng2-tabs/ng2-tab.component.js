@@ -31,8 +31,7 @@ Ng2TabComponent = __decorate([
     core_1.Component({
         selector: 'ng2-tab',
         template: "\n    <div [hidden]=\"!active\" class=\"pane\">\n      <ng-content></ng-content>\n    </div>\n  "
-    }),
-    __metadata("design:paramtypes", [])
+    })
 ], Ng2TabComponent);
 exports.Ng2TabComponent = Ng2TabComponent;
 //# sourceMappingURL=ng2-tab.component.js.map

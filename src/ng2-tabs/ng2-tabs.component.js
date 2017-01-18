@@ -52,8 +52,7 @@ Ng2TabsComponent = __decorate([
     core_1.Component({
         selector: 'ng2-tabs',
         template: "\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of coTabCmps\"\n        (click)=\"selectTab(tab)\">\n        <a href=\"#\" class=\"nav-link\"\n          [class.active]=\"tab.active\">\n          {{tab.title}}\n        </a>\n      </li>\n    </ul>\n    <ng-content></ng-content>\n  "
-    }),
-    __metadata("design:paramtypes", [])
+    })
 ], Ng2TabsComponent);
 exports.Ng2TabsComponent = Ng2TabsComponent;
 //# sourceMappingURL=ng2-tabs.component.js.map
