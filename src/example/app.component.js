@@ -14,10 +14,10 @@ var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent.prototype.selectTab = function (activatorId) {
-        this.ng2TabsComponent.selectTabByActivatorId(activatorId);
+        this.ng2TabsComponent.selectTab({ activatorId: activatorId });
     };
-    AppComponent.prototype.selectedTab = function (tab) {
-        console.log('Tab selected: ', tab);
+    AppComponent.prototype.selectedTab = function (options) {
+        console.log(options);
     };
     return AppComponent;
 }());

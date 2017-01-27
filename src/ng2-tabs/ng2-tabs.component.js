@@ -17,26 +17,41 @@ var Ng2TabsComponent = (function () {
     Ng2TabsComponent.prototype.ngAfterContentInit = function () {
         var activeTabs = this.coTabCmps.filter(function (tab) { return tab.active; });
         if (activeTabs.length === 0) {
-            this.selectTab(this.coTabCmps.first, true);
+            this.selectTab({
+                tab: this.coTabCmps.first,
+                selectMethod: 'initFirstTab'
+            });
         }
     };
-    Ng2TabsComponent.prototype.selectTab = function (tab, initial) {
-        this.coTabCmps.toArray().forEach(function (tab) { return tab.active = false; });
-        tab.active = true;
+    Ng2TabsComponent.prototype.selectTab = function (options) {
+        var foundTab;
+        var selectMethod;
+        // The tab itself
+        if (options.tab) {
+            this.unselectAllTabs();
+            options.tab.active = true;
+        }
+        else if (options.activatorId) {
+            selectMethod = 'activatorId';
+            foundTab = this.coTabCmps.toArray().find(function (tab) { return tab.activatorId === options.activatorId; });
+            if (!foundTab) {
+                console.error("No tab with activatorId: \"" + options.activatorId + "\" found");
+            }
+            else {
+                this.unselectAllTabs();
+                foundTab.active = true;
+            }
+        }
         this.selectedTab.emit({
-            initial: !!initial,
-            tab: tab
+            tab: options.tab || foundTab,
+            metaData: options.metaData,
+            selectMethod: options.selectMethod || selectMethod,
+            activatorId: options.activatorId
         });
         return false;
     };
-    Ng2TabsComponent.prototype.selectTabByActivatorId = function (activatorId) {
-        var foundTab = this.coTabCmps.toArray().find(function (tab) { return tab.activatorId === activatorId; });
-        if (!foundTab) {
-            console.error("No tab with activatorId: \"" + activatorId + "\" found");
-        }
-        else {
-            this.selectTab(foundTab);
-        }
+    Ng2TabsComponent.prototype.unselectAllTabs = function () {
+        this.coTabCmps.toArray().forEach(function (tab) { return tab.active = false; });
     };
     return Ng2TabsComponent;
 }());
@@ -51,7 +66,7 @@ __decorate([
 Ng2TabsComponent = __decorate([
     core_1.Component({
         selector: 'ng2-tabs',
-        template: "\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of coTabCmps\"\n        (click)=\"selectTab(tab)\">\n        <a href=\"#\" class=\"nav-link\"\n          [class.active]=\"tab.active\">\n          {{tab.title}}\n        </a>\n      </li>\n    </ul>\n    <ng-content></ng-content>\n  "
+        template: "\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of coTabCmps\"\n        (click)=\"selectTab({tab: tab, selectMethod: 'clickedTab'})\">\n        <a href=\"#\" class=\"nav-link\"\n          [class.active]=\"tab.active\">\n          {{tab.title}}\n        </a>\n      </li>\n    </ul>\n    <ng-content></ng-content>\n  "
     })
 ], Ng2TabsComponent);
 exports.Ng2TabsComponent = Ng2TabsComponent;

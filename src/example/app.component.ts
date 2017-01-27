@@ -21,10 +21,10 @@ export class AppComponent {
   @ViewChild(Ng2TabsComponent) public ng2TabsComponent: Ng2TabsComponent
 
   public selectTab (activatorId) {
-    this.ng2TabsComponent.selectTabByActivatorId(activatorId)
+    this.ng2TabsComponent.selectTab({ activatorId })
   }
 
-  public selectedTab (tab) {
-    console.log('Tab selected: ', tab)
+  public selectedTab (options) {
+    console.log(options)
   }
 }
