@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var ng2_tab_component_1 = require("./ng2-tab.component");
 var Ng2TabsComponent = (function () {
@@ -30,6 +31,7 @@ var Ng2TabsComponent = (function () {
         if (options.tab) {
             this.unselectAllTabs();
             options.tab.active = true;
+            // Select by activator ID
         }
         else if (options.activatorId) {
             selectMethod = 'activatorId';
