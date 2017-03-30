@@ -1,3 +1,7 @@
+## 4.0.0 (2017-03-30)
+
+* Updated angular to v4.0.1
+
 ## 2.0.0 (2017-01-27)
 
 * selectTabByActivatorId => selectTab({activatorId: 'activatorId'})

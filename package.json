@@ -1,6 +1,6 @@
 {
   "name": "@calle/ng2-tabs",
-  "version": "2.0.0",
+  "version": "4.0.0",
   "description": "Angular 2: Simple tabs component",
   "main": "index.js",
   "scripts": {
